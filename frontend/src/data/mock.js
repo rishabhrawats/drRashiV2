@@ -1,16 +1,28 @@
-// Comprehensive mock data for Dr. Rashi Agrawal's medical website
+// Comprehensive mock data for Dr. Rashi Agrawal's medical website - Revamped
 
 export const doctorInfo = {
   name: "Dr. Rashi Agrawal",
   title: "Senior Director – Clinical Administrator & Program Coordinator",
   department: "Radiation Oncology",
-  experience: "22+ Years",
+  experience: "22+",
+  experienceText: "Years of Experience",
   phone: "+91 926 888 0303",
+  whatsapp: "919268880303",
   email: "digitalquery@maxhealthcare.com",
   profileImage: "https://customer-assets.emergentagent.com/job_6fa1bc13-2ded-4091-8436-9d3e22eac5d8/artifacts/vnl434rb_medium_dr_rashi_agrawal_3ddd0e8452.jpg",
   instagram: "https://www.instagram.com/drrashibestoncologistindelhi/",
-  youtube: "https://www.youtube.com/@DrRashiAgrawalCancerSpecialist"
+  youtube: "https://www.youtube.com/@DrRashiAgrawalCancerSpecialist",
+  googleReviews: "https://share.google/hJg5dnCSmt9oprfVA",
+  tagline: "Compassionate Cancer Care with Precision Technology",
+  subTagline: "Experience the perfect blend of advanced radiation oncology and personalized patient care."
 };
+
+export const quickStats = [
+  { value: "22+", label: "Years Experience", icon: "Clock" },
+  { value: "50+", label: "Publications", icon: "FileText" },
+  { value: "10K+", label: "Patients Treated", icon: "Users" },
+  { value: "8+", label: "Global Training Centers", icon: "Globe" }
+];
 
 export const specialties = [
   "Radiation Oncology",
@@ -21,15 +33,6 @@ export const specialties = [
   "Gastrointestinal & Hepatobiliary Oncology"
 ];
 
-export const quotes = [
-  "Radiotherapy experience from cobalt to proton — with special focus on brachytherapy.",
-  "Advanced training across external beam radiotherapy and brachytherapy.",
-  "Precision techniques used routinely: stereotactic, image-guided, and intensity-modulated approaches.",
-  "Committed to cancer awareness, especially among females, through talks and camps.",
-  "Actively involved in DNB teaching and oncology learning environments.",
-  "Clinical practice supported by national awards and conference recognition."
-];
-
 export const hospitals = [
   {
     id: "vaishali",
@@ -37,13 +40,16 @@ export const hospitals = [
     location: "Vaishali, Ghaziabad",
     address: "W-3, Sector 1, Vaishali, Ghaziabad, Uttar Pradesh 201012",
     type: "Primary Practice",
+    mapUrl: "https://maps.google.com/?q=Max+Super+Speciality+Hospital+Vaishali",
     hasTimings: true,
     opdTimings: [
-      { day: "Monday", time: "9:00am – 5:00pm" },
-      { day: "Tuesday", time: "10:00am–1:00pm / 3:00pm–4:00pm" },
-      { day: "Wednesday", time: "10:00am–4:00pm" },
-      { day: "Thursday", time: "10:00am–1:00pm / 3:00pm–4:00pm" },
-      { day: "Saturday", time: "10:00am–1:00pm" }
+      { day: "Monday", time: "9:00 AM – 5:00 PM", available: true },
+      { day: "Tuesday", time: "10:00 AM – 1:00 PM, 3:00 PM – 4:00 PM", available: true },
+      { day: "Wednesday", time: "10:00 AM – 4:00 PM", available: true },
+      { day: "Thursday", time: "10:00 AM – 1:00 PM, 3:00 PM – 4:00 PM", available: true },
+      { day: "Friday", time: "Not Available", available: false },
+      { day: "Saturday", time: "10:00 AM – 1:00 PM", available: true },
+      { day: "Sunday", time: "Not Available", available: false }
     ]
   },
   {
@@ -52,6 +58,7 @@ export const hospitals = [
     location: "Meerut",
     address: "Delhi Road, Meerut, Uttar Pradesh",
     type: "Visiting Consultant",
+    mapUrl: "https://maps.google.com/?q=Max+Medcentre+Meerut",
     hasTimings: false,
     opdTimings: []
   }
@@ -61,392 +68,143 @@ export const expertiseAreas = [
   {
     id: "breast",
     title: "Breast Cancer",
-    description: "Comprehensive radiation therapy for all stages of breast cancer. Routinely treats using precision techniques including IMRT and brachytherapy for optimal tumor control while preserving healthy tissue.",
-    icon: "Heart"
+    shortDesc: "Comprehensive care for all stages",
+    description: "Specialized radiation therapy for breast cancer including breast-conserving treatments, post-mastectomy radiation, and management of locally advanced cases.",
+    icon: "Heart",
+    color: "pink"
   },
   {
     id: "thoracic",
     title: "Thoracic Oncology",
-    description: "Advanced treatment for lung cancer and thoracic malignancies using SBRT, IGRT, and other precision approaches for maximum effectiveness with minimal impact on surrounding structures.",
-    icon: "Wind"
+    shortDesc: "Advanced lung cancer treatment",
+    description: "Expert management of lung cancer and thoracic malignancies using SBRT, IGRT, and motion management techniques.",
+    icon: "Wind",
+    color: "blue"
   },
   {
     id: "gynecologic",
     title: "Gynecologic Oncology",
-    description: "Specialized care for cervical, uterine, ovarian, and other gynecological cancers with expertise in image-guided brachytherapy. Special focus on female cancer awareness and early detection.",
-    icon: "Flower2"
+    shortDesc: "Women's cancer specialist",
+    description: "Specialized care for cervical, uterine, and ovarian cancers with expertise in image-guided brachytherapy.",
+    icon: "Flower2",
+    color: "purple"
   },
   {
     id: "gi-hepatobiliary",
-    title: "Gastrointestinal & Hepatobiliary Oncology",
-    description: "Expert management of cancers affecting the digestive system including esophageal, gastric, pancreatic, rectal, and liver cancers using advanced radiation techniques.",
-    icon: "Activity"
-  },
-  {
-    id: "radiation",
-    title: "Radiation Oncology",
-    description: "Over 22 years of experience across the full spectrum of radiotherapy — from cobalt to proton therapy. Expertise in both external beam radiotherapy and brachytherapy.",
-    icon: "Zap"
-  },
-  {
-    id: "cancer-care",
-    title: "Cancer Care / Oncology",
-    description: "Comprehensive oncology care combining advanced technology with compassionate patient-centered approach. Focus on precision, safety, and patient dignity.",
-    icon: "Shield"
+    title: "GI & Hepatobiliary",
+    shortDesc: "Digestive system cancers",
+    description: "Treatment of esophageal, gastric, pancreatic, rectal, and liver cancers using precision radiation.",
+    icon: "Activity",
+    color: "teal"
   }
 ];
 
 export const techniques = [
-  {
-    id: "sbrt",
-    name: "SBRT",
-    fullName: "Stereotactic Body Radiation Therapy",
-    what: "High-precision, high-dose radiation delivered in fewer sessions",
-    why: "Ideal for small tumors in lung, liver, and spine with minimal damage to surrounding tissue",
-    category: "External Beam"
-  },
-  {
-    id: "igrt",
-    name: "IGRT",
-    fullName: "Image Guided Radiotherapy",
-    what: "Real-time imaging during treatment for precise targeting",
-    why: "Accounts for organ movement and positioning variations for accurate delivery",
-    category: "External Beam"
-  },
-  {
-    id: "imrt",
-    name: "IMRT",
-    fullName: "Intensity Modulated Radiotherapy",
-    what: "Advanced beam shaping with varying radiation intensity",
-    why: "Maximizes tumor dose while sparing healthy tissue and critical structures",
-    category: "External Beam"
-  },
-  {
-    id: "srt",
-    name: "Stereotactic Radiotherapy",
-    fullName: "Stereotactic Radiosurgery & Radiotherapy",
-    what: "Ultra-precise treatment with sub-millimeter accuracy",
-    why: "Used for brain and spine tumors requiring extreme precision",
-    category: "External Beam"
-  },
-  {
-    id: "conformal",
-    name: "Conformal Radiotherapy",
-    fullName: "3D Conformal Radiation Therapy",
-    what: "Treatment beams shaped to match the tumor's 3D shape",
-    why: "Reduces radiation exposure to surrounding healthy tissues",
-    category: "External Beam"
-  },
-  {
-    id: "electron",
-    name: "Electron Therapy",
-    fullName: "Electron Beam Therapy",
-    what: "Specialized treatment with controlled depth penetration",
-    why: "Ideal for superficial tumors and skin cancers",
-    category: "External Beam"
-  },
-  {
-    id: "brachytherapy",
-    name: "Brachytherapy",
-    fullName: "Internal Radiation Therapy",
-    what: "Radiation source placed inside or next to the tumor",
-    why: "Delivers high doses directly to tumor while minimizing exposure to healthy tissue",
-    category: "Brachytherapy"
-  },
-  {
-    id: "ig-brachytherapy",
-    name: "Image-Guided Brachytherapy",
-    fullName: "3D Image-Guided Brachytherapy",
-    what: "Internal radiation with MRI or CT guidance",
-    why: "Ensures optimal dose distribution for gynecological cancers",
-    category: "Brachytherapy"
-  }
+  { id: "sbrt", name: "SBRT", fullName: "Stereotactic Body Radiation Therapy", icon: "Target" },
+  { id: "igrt", name: "IGRT", fullName: "Image-Guided Radiation Therapy", icon: "Scan" },
+  { id: "imrt", name: "IMRT", fullName: "Intensity-Modulated Radiation Therapy", icon: "Layers" },
+  { id: "brachytherapy", name: "Brachytherapy", fullName: "Image-Guided Brachytherapy", icon: "CircleDot" },
+  { id: "srt", name: "SRT", fullName: "Stereotactic Radiotherapy", icon: "Crosshair" },
+  { id: "electron", name: "Electron", fullName: "Electron Beam Therapy", icon: "Zap" }
 ];
 
-export const trainingCredentials = [
-  {
-    id: 1,
-    type: "fellowship",
-    title: "International Fellowship – UICC",
-    institution: "UICC (Union for International Cancer Control)",
-    location: "Geneva, Switzerland",
-    year: "2016–2017",
-    description: "Advanced fellowship in global cancer control strategies and international oncology standards."
-  },
-  {
-    id: 2,
-    type: "training",
-    title: "Tomotherapy / IGRT / IMRT / Image-Guided Brachytherapy",
-    institution: "Long Beach Memorial Medical & Cancer Centre",
-    location: "Los Angeles, USA",
-    year: "",
-    description: "Comprehensive training in advanced radiation therapy techniques."
-  },
-  {
-    id: 3,
-    type: "training",
-    title: "Cyberknife Training",
-    institution: "Orange Coast Medical Centre",
-    location: "California, USA",
-    year: "",
-    description: "Specialized training in robotic radiosurgery system."
-  },
-  {
-    id: 4,
-    type: "training",
-    title: "IMRT / IGRT Training",
-    institution: "Saddleback Medical Centre",
-    location: "Los Angeles, USA",
-    year: "",
-    description: "Advanced training in intensity-modulated and image-guided techniques."
-  },
-  {
-    id: 5,
-    type: "training",
-    title: "Proton Therapy Training",
-    institution: "Loma Linda Proton Therapy Centre",
-    location: "California, USA",
-    year: "",
-    description: "Training in one of the most advanced forms of radiation treatment."
-  },
-  {
-    id: 6,
-    type: "training",
-    title: "Contouring Training",
-    institution: "ESTRO School",
-    location: "Europe",
-    year: "",
-    description: "Advanced training in treatment planning and tumor delineation."
-  },
-  {
-    id: 7,
-    type: "fellowship",
-    title: "Fellowship in Radiation Oncology",
-    institution: "Tata Memorial Hospital",
-    location: "Mumbai, India",
-    year: "",
-    description: "Foundational training at India's premier cancer center."
-  },
-  {
-    id: 8,
-    type: "education",
-    title: "Post Graduation (Radiation Oncology)",
-    institution: "GSVM College",
-    location: "Kanpur, India",
-    year: "",
-    description: "MD in Radiation Oncology."
-  },
-  {
-    id: 9,
-    type: "education",
-    title: "MBBS",
-    institution: "SN Medical College",
-    location: "Agra, India",
-    year: "",
-    description: "Bachelor of Medicine and Bachelor of Surgery."
-  }
-];
-
-export const workExperience = [
-  {
-    id: 1,
-    title: "Senior Director & Program Coordinator",
-    institution: "Max Healthcare",
-    location: "Delhi NCR",
-    current: true,
-    description: "Currently working as Senior Director – Clinical Administrator & Program Coordinator, Radiation Oncology"
-  },
-  {
-    id: 2,
-    title: "Consultant (Oncology Department)",
-    institution: "Max Super Speciality Hospital",
-    location: "Vaishali, Ghaziabad & Patparganj, Delhi",
-    current: false,
-    description: "Radiation oncology consultant providing comprehensive cancer care."
-  },
-  {
-    id: 3,
-    title: "Radiation Oncologist",
-    institution: "Mahavir Cancer Sansthan",
-    location: "Patna",
-    current: false,
-    description: "Cancer treatment and care services."
-  },
-  {
-    id: 4,
-    title: "Radiation Oncologist",
-    institution: "Galaxy Cancer Institute, Pushpanjali Crosslay Hospital",
-    location: "Delhi NCR",
-    current: false,
-    description: "Comprehensive radiation oncology services."
-  },
-  {
-    id: 5,
-    title: "DNB Teaching Faculty",
-    institution: "Various Institutions",
-    location: "India",
-    current: true,
-    description: "Actively involved in DNB teaching and mentoring the next generation of oncologists."
-  },
-  {
-    id: 6,
-    title: "Clinical Observer/Training",
-    institution: "Long Beach Memorial Medical Centre",
-    location: "California, USA",
-    current: false,
-    description: "Advanced clinical training in radiation oncology."
-  },
-  {
-    id: 7,
-    title: "Clinical Observer/Training",
-    institution: "Saddleback Memorial Medical Centre",
-    location: "California, USA",
-    current: false,
-    description: "IMRT/IGRT training and clinical observation."
-  },
-  {
-    id: 8,
-    title: "Clinical Observer/Training",
-    institution: "Orange Coast Medical Centre",
-    location: "California, USA",
-    current: false,
-    description: "Cyberknife training and clinical observation."
-  }
-];
-
-export const memberships = [
-  { id: 1, name: "ESTRO", fullName: "European Society for Radiotherapy and Oncology" },
-  { id: 2, name: "AROI", fullName: "Association of Radiation Oncologists of India" },
-  { id: 3, name: "IBS", fullName: "Indian Brachytherapy Society" },
-  { id: 4, name: "AGOI", fullName: "Association of Gynecological Oncologists of India" },
-  { id: 5, name: "ISO", fullName: "Indian Society of Oncology" },
-  { id: 6, name: "Oncology Forum", fullName: "Oncology Forum" },
-  { id: 7, name: "Delhi Breast Oncology Group", fullName: "Delhi Breast Oncology Group" },
-  { id: 8, name: "IMA", fullName: "Indian Medical Association" }
+export const credentials = [
+  { title: "UICC International Fellowship", location: "Geneva, Switzerland", year: "2016-17", type: "fellowship" },
+  { title: "Proton Therapy Training", location: "Loma Linda, California", year: "", type: "training" },
+  { title: "Cyberknife Training", location: "Orange Coast Medical Centre, USA", year: "", type: "training" },
+  { title: "Tata Memorial Hospital", location: "Mumbai, India", year: "", type: "fellowship" },
+  { title: "ESTRO Contouring School", location: "Europe", year: "", type: "training" }
 ];
 
 export const awards = [
+  { title: "National Fellowship Award", org: "AROI", year: "2013-14" },
+  { title: "Best Paper Award", org: "AROI National Conference", year: "" },
+  { title: "Best Paper Award", org: "North Zone AROI", year: "" }
+];
+
+export const memberships = [
+  "ESTRO", "AROI", "IBS", "AGOI", "ISO", "Delhi Breast Oncology Group", "IMA"
+];
+
+export const testimonials = [
   {
     id: 1,
-    title: "National Fellowship Award (Radiation Oncology)",
-    organization: "AROI",
-    year: "2013–2014",
-    description: "Prestigious national recognition for excellence in radiation oncology."
+    name: "Priya Sharma",
+    location: "Delhi",
+    rating: 5,
+    text: "Dr. Rashi Agrawal is an exceptional doctor. Her expertise in radiation oncology combined with her compassionate approach made my cancer journey much easier. Highly recommended!",
+    treatment: "Breast Cancer",
+    date: "2024"
   },
   {
     id: 2,
-    title: "Best Paper Presentations",
-    organization: "National Conferences",
-    year: "",
-    description: "Multiple best paper awards at national oncology conferences."
+    name: "Rajesh Kumar",
+    location: "Ghaziabad",
+    rating: 5,
+    text: "The level of care and attention I received was outstanding. Dr. Agrawal explained every step of my treatment clearly and was always available to address my concerns.",
+    treatment: "Lung Cancer",
+    date: "2024"
   },
   {
     id: 3,
-    title: "Best Paper Award",
-    organization: "AROI",
-    year: "",
-    description: "Recognition for outstanding research presentation."
+    name: "Meena Gupta",
+    location: "Noida",
+    rating: 5,
+    text: "I am grateful to Dr. Rashi for her skilled treatment and kind support throughout my therapy. Her team at Max Hospital is equally professional and caring.",
+    treatment: "Cervical Cancer",
+    date: "2023"
   },
   {
     id: 4,
-    title: "Best Paper Award",
-    organization: "UP AROI",
-    year: "",
-    description: "State-level recognition for research excellence."
-  },
-  {
-    id: 5,
-    title: "Best Paper Award",
-    organization: "North Zone AROI",
-    year: "",
-    description: "Regional recognition for outstanding research contribution."
+    name: "Anil Verma",
+    location: "Meerut",
+    rating: 5,
+    text: "Best radiation oncologist in Delhi NCR. Her precision in treatment planning and genuine concern for patients sets her apart. Forever thankful!",
+    treatment: "Prostate Cancer",
+    date: "2024"
   }
 ];
 
-export const researchInfo = {
-  sessions: "Chaired various oncology sessions in national and international conferences",
-  publications: "Published papers in renowned medical journals of radiation oncology",
-  contactNote: "For publication list, please contact via email."
-};
+export const faqs = [
+  {
+    question: "What is radiation therapy and how does it work?",
+    answer: "Radiation therapy uses high-energy beams to destroy cancer cells. It works by damaging the DNA of cancer cells, preventing them from growing and dividing. Modern techniques like IMRT and IGRT allow us to target tumors precisely while minimizing damage to healthy tissue."
+  },
+  {
+    question: "Is radiation therapy painful?",
+    answer: "The radiation treatment itself is painless - similar to getting an X-ray. You won't feel anything during the procedure. Some patients may experience side effects like fatigue or skin changes in the treated area, which we carefully manage throughout your treatment."
+  },
+  {
+    question: "How long does each radiation session take?",
+    answer: "Each treatment session typically takes 15-30 minutes, though the actual radiation delivery is only a few minutes. The rest of the time is spent positioning you correctly to ensure precise treatment delivery."
+  },
+  {
+    question: "What is the difference between external beam radiation and brachytherapy?",
+    answer: "External beam radiation delivers treatment from outside your body using a machine. Brachytherapy places radioactive sources inside or very close to the tumor, allowing higher doses directly to the cancer while sparing surrounding tissues. The choice depends on your cancer type and location."
+  },
+  {
+    question: "How do I prepare for my first consultation?",
+    answer: "Please bring all your medical records, imaging reports (CT, MRI, PET scans), biopsy reports, and a list of current medications. Having a family member accompany you can be helpful. Write down any questions you have about your diagnosis or treatment."
+  },
+  {
+    question: "What are the side effects of radiation therapy?",
+    answer: "Side effects vary depending on the treatment area but commonly include fatigue and skin changes in the treated region. We use advanced techniques to minimize side effects and provide comprehensive supportive care throughout your treatment journey."
+  }
+];
 
-export const awarenessInfo = {
-  description: "Actively involved in creating awareness against cancer in society, especially amongst females, through paper media, health talks and camps.",
-  initiatives: [
-    {
-      title: "Female Cancer Awareness",
-      description: "Special focus on breast and cervical cancer awareness programs for women."
-    },
-    {
-      title: "Health Talks",
-      description: "Regular health education sessions for patients and communities."
-    },
-    {
-      title: "Cancer Camps",
-      description: "Free screening and awareness camps in underserved areas."
-    },
-    {
-      title: "Media Engagement",
-      description: "Active participation through paper media and digital platforms."
-    }
-  ]
-};
+export const googleReviews = [
+  { name: "Amit Singh", rating: 5, text: "Excellent doctor with vast experience. Very patient and explains everything in detail.", date: "1 month ago" },
+  { name: "Sunita Yadav", rating: 5, text: "Dr. Rashi is very knowledgeable and caring. The staff is also very helpful.", date: "2 months ago" },
+  { name: "Vikram Malhotra", rating: 5, text: "Highly professional and compassionate. Best radiation oncologist in the region.", date: "3 months ago" },
+  { name: "Rekha Jain", rating: 5, text: "Very satisfied with the treatment. Doctor is very supportive throughout the journey.", date: "1 month ago" }
+];
 
 export const navigationLinks = [
   { label: "Home", href: "/" },
-  { label: "Book Appointment", href: "/book-appointment" },
-  { label: "Expertise", href: "/expertise" },
-  { label: "Treatments & Techniques", href: "/treatments" },
-  { label: "Training & Credentials", href: "/training" },
-  { label: "Research & Teaching", href: "/research" },
-  { label: "Cancer Awareness", href: "/awareness" },
-  { label: "Discover", href: "/discover" },
-  { label: "Contact", href: "/contact" }
+  { label: "About", href: "/#about" },
+  { label: "Expertise", href: "/#expertise" },
+  { label: "Treatments", href: "/#treatments" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Contact", href: "/#contact" }
 ];
-
-export const discoverTopics = [
-  {
-    id: "understanding-radiation",
-    title: "Understanding Radiation Oncology",
-    description: "Learn about radiation therapy and how it works to treat cancer.",
-    href: "/discover/radiation-oncology"
-  },
-  {
-    id: "ebrt-vs-brachy",
-    title: "External Beam vs Brachytherapy",
-    description: "Understand the differences between these two main radiation approaches.",
-    href: "/discover/ebrt-vs-brachytherapy"
-  },
-  {
-    id: "precision-techniques",
-    title: "Precision Radiation Techniques",
-    description: "Explore advanced techniques like IMRT, IGRT, and SBRT.",
-    href: "/discover/precision-techniques"
-  },
-  {
-    id: "women-awareness",
-    title: "Cancer Awareness for Women",
-    description: "Important information about breast and gynecological cancers.",
-    href: "/discover/women-cancer-awareness"
-  },
-  {
-    id: "appointment-guide",
-    title: "Appointment Preparation Guide",
-    description: "What to expect and how to prepare for your consultation.",
-    href: "/discover/appointment-guide"
-  }
-];
-
-export const mediaContent = {
-  featuredVideo: {
-    title: "Understanding Radiation Therapy",
-    thumbnail: "https://img.youtube.com/vi/default/maxresdefault.jpg",
-    duration: "10:25",
-    topic: "Education"
-  },
-  reels: [
-    { title: "Breast Cancer Awareness", topic: "Awareness", platform: "instagram" },
-    { title: "IMRT Explained", topic: "Techniques", platform: "instagram" },
-    { title: "Cancer Screening Tips", topic: "Prevention", platform: "instagram" }
-  ],
-  categories: ["Breast", "Thoracic", "Gynecologic", "GI & Hepatobiliary", "Radiation Techniques", "Awareness"]
-};
