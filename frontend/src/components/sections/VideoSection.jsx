@@ -28,25 +28,49 @@ const VideoSection = () => {
                 href={doctorInfo.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block relative aspect-video bg-gradient-to-br from-slate-800 to-slate-900 group"
+                className="block relative aspect-video bg-gradient-to-br from-slate-800 to-slate-900 group overflow-hidden"
               >
-                {/* Thumbnail overlay */}
+                {/* Cover Image */}
+                <img
+                  src={doctorInfo.profileImage}
+                  alt="Dr. Rashi Agrawal - Cancer Specialist"
+                  className="absolute inset-0 w-full h-full object-cover object-top opacity-90 group-hover:scale-105 transition-transform duration-500"
+                />
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-slate-900/20" />
+                
+                {/* Play Button & Text */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
                     <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 group-hover:scale-110 transition-all">
-                      <div className="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center shadow-xl shadow-red-600/30">
                         <Play size={32} className="text-white ml-1" fill="white" />
                       </div>
                     </div>
-                    <p className="text-white/80 font-medium">Watch on YouTube</p>
+                    <p className="text-white font-semibold text-lg">Watch on YouTube</p>
+                    <p className="text-white/70 text-sm mt-1">Educational Cancer Care Videos</p>
                   </div>
                 </div>
                 
                 {/* YouTube Badge */}
                 <div className="absolute top-4 left-4">
-                  <div className="flex items-center gap-2 px-3 py-1.5 bg-red-600 rounded-lg">
+                  <div className="flex items-center gap-2 px-3 py-1.5 bg-red-600 rounded-lg shadow-lg">
                     <Youtube size={18} className="text-white" />
                     <span className="text-white text-sm font-medium">YouTube</span>
+                  </div>
+                </div>
+                
+                {/* Channel Name Badge */}
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">RA</span>
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">Dr. Rashi Agrawal</p>
+                      <p className="text-white/60 text-xs">Cancer Specialist • Radiation Oncologist</p>
+                    </div>
                   </div>
                 </div>
               </a>
