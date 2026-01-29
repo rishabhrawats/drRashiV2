@@ -3,40 +3,28 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'sonner';
 
-// Components
+// Layout Components
 import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import AboutSection from './components/AboutSection';
-import ExpertiseSection from './components/ExpertiseSection';
-import TechnologySection from './components/TechnologySection';
-import TrainingSection from './components/TrainingSection';
-import LeadershipSection from './components/LeadershipSection';
-import AwarenessSection from './components/AwarenessSection';
-import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
-const LandingPage = () => {
-  return (
-    <div className="min-h-screen bg-[#fffef8]">
-      <Header />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <ExpertiseSection />
-        <TechnologySection />
-        <TrainingSection />
-        <LeadershipSection />
-        <AwarenessSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
-  );
-};
+// Pages
+import HomePage from './pages/HomePage';
+import BookAppointmentPage from './pages/BookAppointmentPage';
+import ExpertisePage from './pages/ExpertisePage';
+import TreatmentsPage from './pages/TreatmentsPage';
+import TrainingPage from './pages/TrainingPage';
+import WorkExperiencePage from './pages/WorkExperiencePage';
+import MembershipsPage from './pages/MembershipsPage';
+import AwardsPage from './pages/AwardsPage';
+import ResearchPage from './pages/ResearchPage';
+import AwarenessPage from './pages/AwarenessPage';
+import DoctorTalkPage from './pages/DoctorTalkPage';
+import DiscoverPage from './pages/DiscoverPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
-    <div>
+    <div className="min-h-screen bg-[#fffef8]">
       <Toaster 
         position="top-right" 
         toastOptions={{
@@ -48,9 +36,26 @@ function App() {
         }}
       />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-        </Routes>
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/book-appointment" element={<BookAppointmentPage />} />
+            <Route path="/expertise" element={<ExpertisePage />} />
+            <Route path="/treatments" element={<TreatmentsPage />} />
+            <Route path="/training" element={<TrainingPage />} />
+            <Route path="/work-experience" element={<WorkExperiencePage />} />
+            <Route path="/memberships" element={<MembershipsPage />} />
+            <Route path="/awards" element={<AwardsPage />} />
+            <Route path="/research" element={<ResearchPage />} />
+            <Route path="/awareness" element={<AwarenessPage />} />
+            <Route path="/doctor-talk" element={<DoctorTalkPage />} />
+            <Route path="/discover" element={<DiscoverPage />} />
+            <Route path="/discover/:topic" element={<DiscoverPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </main>
+        <Footer />
       </BrowserRouter>
     </div>
   );
