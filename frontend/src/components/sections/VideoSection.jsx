@@ -32,9 +32,9 @@ const VideoSection = () => {
               >
                 {/* Cover Image */}
                 <img
-                  src={doctorInfo.profileImage}
-                  alt="Dr. Rashi Agrawal - Cancer Specialist"
-                  className="absolute inset-0 w-full h-full object-cover object-top opacity-90 group-hover:scale-105 transition-transform duration-500"
+                  src="https://customer-assets.emergentagent.com/job_6fa1bc13-2ded-4091-8436-9d3e22eac5d8/artifacts/38iulz6i_The%20Most.png"
+                  alt="Dr. Rashi Agrawal - Heart Saving Radiation"
+                  className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-500"
                 />
                 
                 {/* Gradient Overlay */}
