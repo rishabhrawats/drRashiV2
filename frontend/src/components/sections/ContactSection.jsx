@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { doctorInfo, hospitals } from '../../data/mock';
-import { Phone, Mail, MapPin, Send, Calendar, MessageCircle, CheckCircle } from 'lucide-react';
+import { Phone, Globe, MapPin, Send, Calendar, MessageCircle, CheckCircle, ExternalLink } from 'lucide-react';
 import { toast } from 'sonner';
 
 const ContactSection = () => {
@@ -61,15 +61,30 @@ const ContactSection = () => {
                 </a>
                 
                 <a
-                  href={`mailto:${doctorInfo.email}`}
+                  href={`tel:${doctorInfo.phone2.replace(/\s/g, '')}`}
+                  className="flex items-center gap-4 p-4 bg-blue-50 rounded-2xl hover:bg-blue-100 transition-colors"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                    <Phone size={22} className="text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-500">Alternate Number</p>
+                    <p className="font-semibold text-slate-800">{doctorInfo.phone2}</p>
+                  </div>
+                </a>
+                
+                <a
+                  href={`https://${doctorInfo.website}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-teal-50 rounded-2xl hover:bg-teal-100 transition-colors"
                 >
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center">
-                    <Mail size={22} className="text-white" />
+                    <Globe size={22} className="text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-500">Email</p>
-                    <p className="font-semibold text-slate-800">{doctorInfo.email}</p>
+                    <p className="text-sm text-slate-500">Website</p>
+                    <p className="font-semibold text-slate-800">{doctorInfo.website}</p>
                   </div>
                 </a>
               </div>
@@ -80,16 +95,23 @@ const ContactSection = () => {
               <h3 className="font-display text-xl font-bold text-slate-800 mb-6">Locations</h3>
               <div className="space-y-4">
                 {hospitals.map((hospital) => (
-                  <div key={hospital.id} className="flex items-start gap-4 p-4 bg-slate-50 rounded-2xl">
+                  <a
+                    key={hospital.id}
+                    href={hospital.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-4 p-4 bg-slate-50 rounded-2xl hover:bg-slate-100 transition-colors"
+                  >
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center flex-shrink-0">
                       <MapPin size={18} className="text-white" />
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <p className="font-semibold text-slate-800">{hospital.name}</p>
                       <p className="text-sm text-slate-500">{hospital.location}</p>
                       <p className="text-xs text-slate-400 mt-1">{hospital.address}</p>
                     </div>
-                  </div>
+                    <ExternalLink size={16} className="text-slate-400 flex-shrink-0 mt-1" />
+                  </a>
                 ))}
               </div>
             </div>

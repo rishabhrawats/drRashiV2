@@ -65,11 +65,13 @@ const ResearchPage = () => {
                 {researchInfo.contactNote}
               </p>
               <a
-                href={`mailto:${doctorInfo.email}`}
+                href={`https://${doctorInfo.website}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-white hover:underline"
               >
                 <Mail size={14} />
-                {doctorInfo.email}
+                {doctorInfo.website}
               </a>
             </div>
           </div>

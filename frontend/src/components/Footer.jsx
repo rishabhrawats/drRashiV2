@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { doctorInfo, navigationLinks, memberships, hospitals } from '../data/mock';
-import { Phone, Mail, MapPin, Instagram, Youtube, Heart, ExternalLink } from 'lucide-react';
+import { Phone, Globe, MapPin, Instagram, Youtube, Heart, ExternalLink, Facebook } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -43,6 +43,14 @@ const Footer = () => {
                 className="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-red-600 rounded-lg transition-colors"
               >
                 <Youtube size={18} />
+              </a>
+              <a
+                href={doctorInfo.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-blue-700 rounded-lg transition-colors"
+              >
+                <Facebook size={18} />
               </a>
               <a
                 href={doctorInfo.googleReviews}
@@ -89,13 +97,24 @@ const Footer = () => {
                 <span className="text-sm">{doctorInfo.phone}</span>
               </a>
               <a
-                href={`mailto:${doctorInfo.email}`}
+                href={`tel:${doctorInfo.phone2.replace(/\s/g, '')}`}
                 className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors"
               >
                 <div className="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-lg">
-                  <Mail size={16} />
+                  <Phone size={16} />
                 </div>
-                <span className="text-sm">{doctorInfo.email}</span>
+                <span className="text-sm">{doctorInfo.phone2}</span>
+              </a>
+              <a
+                href={`https://${doctorInfo.website}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors"
+              >
+                <div className="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-lg">
+                  <Globe size={16} />
+                </div>
+                <span className="text-sm">{doctorInfo.website}</span>
               </a>
             </div>
           </div>

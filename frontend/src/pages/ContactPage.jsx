@@ -53,11 +53,13 @@ const ContactPage = () => {
                     <span>{doctorInfo.phone}</span>
                   </a>
                   <a
-                    href={`mailto:${doctorInfo.email}`}
+                    href={`https://${doctorInfo.website}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
                   >
                     <Mail size={18} />
-                    <span className="text-sm">{doctorInfo.email}</span>
+                    <span className="text-sm">{doctorInfo.website}</span>
                   </a>
                 </div>
               </div>

@@ -41,8 +41,8 @@ const HeroSection = () => {
 
             {/* Subtitle */}
             <p className="text-lg text-slate-600 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              {doctorInfo.experience} years of expertise in precision radiation oncology. 
-              Combining world-class technology with personalized patient care.
+              {doctorInfo.title}<br />
+              {doctorInfo.designation}, {doctorInfo.hospital}
             </p>
 
             {/* Specialty Tags */}
@@ -73,7 +73,7 @@ const HeroSection = () => {
                 className="flex items-center gap-2 px-8 py-4 bg-white text-slate-700 font-semibold rounded-2xl border-2 border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all"
               >
                 <Phone size={20} />
-                <span>{doctorInfo.phone}</span>
+                <span>Call Now</span>
               </a>
             </div>
 
@@ -119,7 +119,7 @@ const HeroSection = () => {
                       {doctorInfo.name}
                     </h2>
                     <p className="text-blue-300 text-sm">
-                      {doctorInfo.department}
+                      {doctorInfo.designation} | {doctorInfo.department}
                     </p>
                   </div>
                   <a

@@ -1,6 +1,6 @@
 import React from 'react';
 import { doctorInfo } from '../../data/mock';
-import { Play, Youtube, Instagram, ExternalLink } from 'lucide-react';
+import { Play, Youtube, Instagram, Facebook, ExternalLink } from 'lucide-react';
 
 const VideoSection = () => {
   return (
@@ -120,6 +120,23 @@ const VideoSection = () => {
                 <p className="text-sm text-slate-500">Health tips & awareness reels</p>
               </div>
               <ExternalLink size={18} className="text-slate-400 group-hover:text-pink-600 transition-colors" />
+            </a>
+
+            {/* Facebook Card */}
+            <a
+              href={doctorInfo.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-card-strong rounded-2xl p-6 flex items-center gap-4 hover-lift group"
+            >
+              <div className="w-14 h-14 rounded-xl bg-blue-700 flex items-center justify-center flex-shrink-0">
+                <Facebook size={28} className="text-white" />
+              </div>
+              <div className="flex-1">
+                <p className="font-semibold text-slate-800">Facebook</p>
+                <p className="text-sm text-slate-500">Updates & community</p>
+              </div>
+              <ExternalLink size={18} className="text-slate-400 group-hover:text-blue-700 transition-colors" />
             </a>
 
             {/* Google Reviews Card */}

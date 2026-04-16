@@ -2,16 +2,20 @@
 
 export const doctorInfo = {
   name: "Dr. Rashi Agrawal",
-  title: "Senior Director – Clinical Administrator & Program Coordinator",
+  title: "M.D. (Clinical & Radiation Oncology), FUICC (USA)",
+  designation: "Director, Radiation Oncology",
+  hospital: "Max Super Speciality Hospital, Vaishali, Ghaziabad",
   department: "Radiation Oncology",
   experience: "22+",
   experienceText: "Years of Experience",
-  phone: "+91 926 888 0303",
-  whatsapp: "919268880303",
-  email: "digitalquery@maxhealthcare.com",
+  phone: "+91 92171 91913",
+  phone2: "+91 98914 83550",
+  whatsapp: "919891483550",
+  website: "drrashiagrawal.com",
   profileImage: "https://customer-assets.emergentagent.com/job_6fa1bc13-2ded-4091-8436-9d3e22eac5d8/artifacts/vnl434rb_medium_dr_rashi_agrawal_3ddd0e8452.jpg",
-  instagram: "https://www.instagram.com/drrashibestoncologistindelhi/",
-  youtube: "https://www.youtube.com/@DrRashiAgrawalCancerSpecialist",
+  instagram: "https://www.instagram.com/drrashiagrawalcancerspecialist?igsh=MWIxaDF3MHhseHcyZg==",
+  youtube: "https://youtube.com/@drrashiagrawalcancerspecialist?feature=shared",
+  facebook: "https://www.facebook.com/share/18MbujzC7q/",
   googleReviews: "https://share.google/hJg5dnCSmt9oprfVA",
   tagline: "Compassionate Cancer Care with Precision Technology",
   subTagline: "Experience the perfect blend of advanced radiation oncology and personalized patient care."
@@ -26,11 +30,11 @@ export const quickStats = [
 
 export const specialties = [
   "Radiation Oncology",
-  "Cancer Care/Oncology",
-  "Breast Cancer",
-  "Thoracic Oncology",
-  "Gynecologic Oncology",
-  "Gastrointestinal & Hepatobiliary Oncology"
+  "Head & Neck Cancer",
+  "Urological Malignancy",
+  "Bone & Soft Tissue Sarcoma",
+  "Brain Tumor (Neuro Oncology)",
+  "Breast Cancer"
 ];
 
 export const hospitals = [
@@ -40,62 +44,70 @@ export const hospitals = [
     location: "Vaishali, Ghaziabad",
     address: "W-3, Sector 1, Vaishali, Ghaziabad, Uttar Pradesh 201012",
     type: "Primary Practice",
-    mapUrl: "https://maps.google.com/?q=Max+Super+Speciality+Hospital+Vaishali",
+    mapUrl: "https://maps.app.goo.gl/2mrnAZtFxaHkh5J39",
     hasTimings: true,
     opdTimings: [
-      { day: "Monday", time: "9:00 AM – 5:00 PM", available: true },
-      { day: "Tuesday", time: "10:00 AM – 1:00 PM, 3:00 PM – 4:00 PM", available: true },
-      { day: "Wednesday", time: "10:00 AM – 4:00 PM", available: true },
-      { day: "Thursday", time: "10:00 AM – 1:00 PM, 3:00 PM – 4:00 PM", available: true },
-      { day: "Friday", time: "Not Available", available: false },
-      { day: "Saturday", time: "10:00 AM – 1:00 PM", available: true },
+      { day: "Monday", time: "9:00 AM – 4:00 PM", available: true },
+      { day: "Tuesday", time: "9:00 AM – 4:00 PM", available: true },
+      { day: "Wednesday", time: "9:00 AM – 4:00 PM", available: true },
+      { day: "Thursday", time: "9:00 AM – 4:00 PM", available: true },
+      { day: "Friday", time: "9:00 AM – 4:00 PM", available: true },
+      { day: "Saturday", time: "9:00 AM – 4:00 PM", available: true },
       { day: "Sunday", time: "Not Available", available: false }
     ]
   },
   {
-    id: "meerut",
-    name: "Max Medcentre",
-    location: "Meerut",
-    address: "Delhi Road, Meerut, Uttar Pradesh",
-    type: "Visiting Consultant",
-    mapUrl: "https://maps.google.com/?q=Max+Medcentre+Meerut",
-    hasTimings: false,
-    opdTimings: []
+    id: "clinic",
+    name: "Dr. Rashi Agrawal's Clinic",
+    location: "Patel Nagar, Ghaziabad",
+    address: "J-68, Patel Nagar 1st, Opp. Old Bus Stand, Near Poddar Nursing Home, Ghaziabad",
+    type: "Private Clinic",
+    mapUrl: "https://maps.app.goo.gl/h6W6Tux1NEofrgGx9",
+    hasTimings: true,
+    opdTimings: [
+      { day: "Monday", time: "5:00 PM – 6:00 PM", available: true },
+      { day: "Tuesday", time: "5:00 PM – 6:00 PM", available: true },
+      { day: "Wednesday", time: "5:00 PM – 6:00 PM", available: true },
+      { day: "Thursday", time: "5:00 PM – 6:00 PM", available: true },
+      { day: "Friday", time: "5:00 PM – 6:00 PM", available: true },
+      { day: "Saturday", time: "5:00 PM – 6:00 PM", available: true },
+      { day: "Sunday", time: "On Appointment", available: true }
+    ]
   }
 ];
 
 export const expertiseAreas = [
   {
-    id: "breast",
-    title: "Breast Cancer",
-    shortDesc: "Comprehensive care for all stages",
-    description: "Specialized radiation therapy for breast cancer including breast-conserving treatments, post-mastectomy radiation, and management of locally advanced cases.",
-    icon: "Heart",
-    color: "pink"
-  },
-  {
-    id: "thoracic",
-    title: "Thoracic Oncology",
-    shortDesc: "Advanced lung cancer treatment",
-    description: "Expert management of lung cancer and thoracic malignancies using SBRT, IGRT, and motion management techniques.",
-    icon: "Wind",
+    id: "head-neck",
+    title: "Head & Neck Cancer",
+    shortDesc: "Specialized head & neck care",
+    description: "Expert radiation therapy for head and neck malignancies including oral cavity, pharynx, larynx, and thyroid cancers using precision IMRT and IGRT techniques.",
+    icon: "User",
     color: "blue"
   },
   {
-    id: "gynecologic",
-    title: "Gynecologic Oncology",
-    shortDesc: "Women's cancer specialist",
-    description: "Specialized care for cervical, uterine, and ovarian cancers with expertise in image-guided brachytherapy.",
-    icon: "Flower2",
+    id: "urological",
+    title: "Urological Malignancy",
+    shortDesc: "Prostate, Bladder & Kidney cancer",
+    description: "Comprehensive treatment for prostate, bladder, and kidney cancers with advanced radiation techniques including SBRT and brachytherapy for optimal outcomes.",
+    icon: "Activity",
+    color: "teal"
+  },
+  {
+    id: "sarcoma",
+    title: "Bone & Soft Tissue Sarcoma",
+    shortDesc: "Musculoskeletal cancer expert",
+    description: "Specialized radiation therapy for bone and soft tissue sarcomas, including pre-operative and post-operative radiation with limb-preserving approaches.",
+    icon: "Bone",
     color: "purple"
   },
   {
-    id: "gi-hepatobiliary",
-    title: "GI & Hepatobiliary",
-    shortDesc: "Digestive system cancers",
-    description: "Treatment of esophageal, gastric, pancreatic, rectal, and liver cancers using precision radiation.",
-    icon: "Activity",
-    color: "teal"
+    id: "neuro",
+    title: "Brain Tumor (Neuro Oncology)",
+    shortDesc: "Advanced brain tumor treatment",
+    description: "Expert management of brain tumors using stereotactic radiosurgery (SRS), fractionated stereotactic radiotherapy, and whole brain radiation techniques.",
+    icon: "Brain",
+    color: "pink"
   }
 ];
 

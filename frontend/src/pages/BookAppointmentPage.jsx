@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { hospitals, doctorInfo } from '../data/mock';
 import { format, addMonths, subMonths, startOfMonth, endOfMonth, eachDayOfInterval, isBefore, startOfDay, isToday, getDay } from 'date-fns';
-import { ChevronLeft, ChevronRight, Calendar, Check, Phone, Mail, MapPin, Clock, ArrowLeft } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Calendar, Check, Phone, MapPin, Clock, ArrowLeft } from 'lucide-react';
 import { toast } from 'sonner';
 
 const BookAppointmentPage = () => {
@@ -387,15 +387,15 @@ const BookAppointmentPage = () => {
             </div>
           </a>
           <a
-            href={`mailto:${doctorInfo.email}`}
+            href={`tel:${doctorInfo.phone2.replace(/\s/g, '')}`}
             className="glass-card-strong rounded-2xl p-5 flex items-center gap-4 hover-lift"
           >
             <div className="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center">
-              <Mail size={22} className="text-teal-600" />
+              <Phone size={22} className="text-teal-600" />
             </div>
             <div>
-              <p className="text-sm text-slate-500">Email</p>
-              <p className="font-semibold text-slate-800">{doctorInfo.email}</p>
+              <p className="text-sm text-slate-500">Alternate Number</p>
+              <p className="font-semibold text-slate-800">{doctorInfo.phone2}</p>
             </div>
           </a>
         </div>

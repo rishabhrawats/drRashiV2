@@ -1,9 +1,9 @@
 import React from 'react';
 import { expertiseAreas } from '../../data/mock';
-import { Heart, Wind, Flower2, Activity, ArrowRight } from 'lucide-react';
+import { Heart, User, Activity, Bone, Brain, ArrowRight } from 'lucide-react';
 
 const iconMap = {
-  Heart, Wind, Flower2, Activity
+  Heart, User, Activity, Bone, Brain
 };
 
 const colorMap = {
