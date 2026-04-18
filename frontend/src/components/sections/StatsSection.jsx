@@ -22,8 +22,8 @@ const StatsSection = () => {
                     index < quickStats.length - 1 ? 'border-r border-slate-100' : ''
                   } ${index < 2 ? 'border-b lg:border-b-0 border-slate-100' : ''}`}
                 >
-                  <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-blue-100 to-teal-100 rounded-xl flex items-center justify-center">
-                    <IconComponent size={22} className="text-blue-600" />
+                  <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-pink-100 to-cyan-100 rounded-xl flex items-center justify-center">
+                    <IconComponent size={22} className="text-pink-600" />
                   </div>
                   <p className="font-display text-3xl font-bold text-slate-800">
                     {stat.value}

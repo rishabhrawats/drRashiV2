@@ -5,21 +5,21 @@ import { Calendar, Phone, Play, Award, Star, ArrowRight, CheckCircle } from 'luc
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden" data-testid="hero-section">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-teal-50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-pink-50 via-white to-cyan-50" />
       
       {/* Decorative Elements */}
-      <div className="absolute top-20 right-0 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-0 w-96 h-96 bg-teal-200/30 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-100/20 to-teal-100/20 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-0 w-96 h-96 bg-pink-200/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-0 w-96 h-96 bg-cyan-200/30 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-pink-100/20 to-cyan-100/20 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 py-12 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className="space-y-8 text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm border border-blue-100 rounded-full shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm border border-pink-100 rounded-full shadow-sm">
               <div className="flex items-center -space-x-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={14} className="text-amber-400" fill="currentColor" />
@@ -32,7 +32,7 @@ const HeroSection = () => {
             <div>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
                 Advanced
-                <span className="block bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-pink-600 to-cyan-500 bg-clip-text text-transparent">
                   Cancer Care
                 </span>
                 with Compassion
@@ -52,7 +52,7 @@ const HeroSection = () => {
                   key={index}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/80 backdrop-blur-sm border border-slate-200 rounded-full text-sm text-slate-600"
                 >
-                  <CheckCircle size={14} className="text-teal-500" />
+                  <CheckCircle size={14} className="text-cyan-500" />
                   {specialty}
                 </span>
               ))}
@@ -62,7 +62,8 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Link
                 to="/book-appointment"
-                className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-2xl shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 transition-all"
+                className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-600 to-pink-700 text-white font-semibold rounded-2xl shadow-lg shadow-pink-500/25 hover:shadow-xl hover:shadow-pink-500/30 transition-all"
+                data-testid="hero-book-btn"
               >
                 <Calendar size={20} />
                 <span>Book Appointment</span>
@@ -70,7 +71,8 @@ const HeroSection = () => {
               </Link>
               <a
                 href={`tel:${doctorInfo.phone.replace(/\s/g, '')}`}
-                className="flex items-center gap-2 px-8 py-4 bg-white text-slate-700 font-semibold rounded-2xl border-2 border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all"
+                className="flex items-center gap-2 px-8 py-4 bg-white text-slate-700 font-semibold rounded-2xl border-2 border-slate-200 hover:border-pink-300 hover:bg-pink-50 transition-all"
+                data-testid="hero-call-btn"
               >
                 <Phone size={20} />
                 <span>Call Now</span>
@@ -90,8 +92,8 @@ const HeroSection = () => {
               </div>
               <div className="w-px h-8 bg-slate-200 hidden sm:block" />
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <Award size={20} className="text-blue-600" />
+                <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
+                  <Award size={20} className="text-cyan-600" />
                 </div>
                 <div className="text-left">
                   <p className="text-xs text-slate-500">UICC Fellow</p>
@@ -118,7 +120,7 @@ const HeroSection = () => {
                     <h2 className="font-display text-2xl font-bold text-white">
                       {doctorInfo.name}
                     </h2>
-                    <p className="text-blue-300 text-sm">
+                    <p className="text-cyan-300 text-sm">
                       {doctorInfo.designation} | {doctorInfo.department}
                     </p>
                   </div>
@@ -138,7 +140,7 @@ const HeroSection = () => {
             {/* Floating Experience Card */}
             <div className="absolute -left-4 lg:-left-8 top-1/2 -translate-y-1/2 glass-card rounded-2xl p-5 shadow-xl animate-float">
               <div className="text-center">
-                <p className="font-display text-4xl font-bold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
+                <p className="font-display text-4xl font-bold bg-gradient-to-r from-pink-600 to-cyan-500 bg-clip-text text-transparent">
                   {doctorInfo.experience}
                 </p>
                 <p className="text-xs text-slate-500 font-medium">Years</p>
@@ -149,7 +151,7 @@ const HeroSection = () => {
             {/* Floating Max Hospital Card */}
             <div className="absolute -right-4 lg:-right-8 bottom-20 glass-card rounded-2xl p-4 shadow-xl">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                <div className="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
                   MAX
                 </div>
                 <div>

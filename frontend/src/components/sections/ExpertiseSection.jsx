@@ -26,7 +26,7 @@ const ExpertiseSection = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-teal-50 text-teal-600 text-sm font-semibold rounded-full mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-50 text-cyan-600 text-sm font-semibold rounded-full mb-4">
             <Heart size={16} />
             Areas of Expertise
           </span>
@@ -63,7 +63,7 @@ const ExpertiseSection = () => {
                     <p className="text-slate-600 leading-relaxed">
                       {area.description}
                     </p>
-                    <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-blue-600 group-hover:gap-3 transition-all">
+                    <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-pink-600 group-hover:gap-3 transition-all">
                       <span>Learn more</span>
                       <ArrowRight size={16} />
                     </div>

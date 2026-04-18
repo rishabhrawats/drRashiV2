@@ -14,7 +14,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-blue-600 via-blue-700 to-teal-600">
+    <section className="py-20 lg:py-28 bg-gradient-to-br from-pink-600 via-pink-700 to-cyan-600" data-testid="testimonials-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -25,7 +25,7 @@ const TestimonialsSection = () => {
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-white mb-6">
             Healing Journeys
           </h2>
-          <p className="text-lg text-blue-100">
+          <p className="text-lg text-pink-100">
             Stories of hope and recovery from patients who trusted their care with us.
           </p>
         </div>
@@ -46,8 +46,8 @@ const TestimonialsSection = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-white">{testimonials[activeIndex].name}</p>
-                  <p className="text-blue-200 text-sm">
-                    {testimonials[activeIndex].location} • {testimonials[activeIndex].treatment}
+                  <p className="text-pink-200 text-sm">
+                    {testimonials[activeIndex].location} &bull; {testimonials[activeIndex].treatment}
                   </p>
                   <div className="flex mt-1">
                     {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
@@ -62,12 +62,14 @@ const TestimonialsSection = () => {
                 <button
                   onClick={prevTestimonial}
                   className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
+                  data-testid="testimonial-prev"
                 >
                   <ChevronLeft size={20} />
                 </button>
                 <button
                   onClick={nextTestimonial}
                   className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
+                  data-testid="testimonial-next"
                 >
                   <ChevronRight size={20} />
                 </button>

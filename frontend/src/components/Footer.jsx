@@ -7,19 +7,19 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer className="bg-slate-900 text-white" data-testid="main-footer">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Column 1 - About */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center text-white font-display font-bold text-lg">
-                RA
-              </div>
-              <div>
-                <p className="font-display text-lg font-semibold">Dr. Rashi Agrawal</p>
-                <p className="text-xs text-slate-400">Radiation Oncologist</p>
+            <div className="mb-6">
+              <div className="bg-white rounded-xl p-2 inline-block">
+                <img
+                  src={doctorInfo.logo}
+                  alt="Dr. Rashi Agrawal"
+                  className="h-10 w-auto object-contain"
+                />
               </div>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed mb-6">
@@ -33,6 +33,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-pink-600 rounded-lg transition-colors"
+                data-testid="footer-instagram"
               >
                 <Instagram size={18} />
               </a>
@@ -41,6 +42,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-red-600 rounded-lg transition-colors"
+                data-testid="footer-youtube"
               >
                 <Youtube size={18} />
               </a>
@@ -49,6 +51,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-blue-700 rounded-lg transition-colors"
+                data-testid="footer-facebook"
               >
                 <Facebook size={18} />
               </a>
@@ -56,7 +59,8 @@ const Footer = () => {
                 href={doctorInfo.googleReviews}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-blue-600 rounded-lg transition-colors"
+                className="w-10 h-10 flex items-center justify-center bg-slate-800 hover:bg-cyan-600 rounded-lg transition-colors"
+                data-testid="footer-google-reviews"
               >
                 <ExternalLink size={18} />
               </a>
@@ -126,7 +130,13 @@ const Footer = () => {
             </h4>
             <div className="space-y-4">
               {hospitals.map((hospital) => (
-                <div key={hospital.id} className="flex items-start gap-3">
+                <a
+                  key={hospital.id}
+                  href={hospital.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 text-slate-300 hover:text-white transition-colors"
+                >
                   <div className="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-lg flex-shrink-0">
                     <MapPin size={16} />
                   </div>
@@ -134,7 +144,7 @@ const Footer = () => {
                     <p className="text-sm font-medium text-white">{hospital.name}</p>
                     <p className="text-xs text-slate-400">{hospital.location}</p>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -158,10 +168,10 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-slate-500">
-              © {currentYear} {doctorInfo.name}. All rights reserved.
+              &copy; {currentYear} {doctorInfo.name}. All rights reserved.
             </p>
             <p className="text-xs text-slate-500 flex items-center gap-1">
-              Made with <Heart size={12} className="text-red-500" fill="currentColor" /> for better healthcare
+              Made with <Heart size={12} className="text-pink-500" fill="currentColor" /> for better healthcare
             </p>
           </div>
           <p className="mt-4 text-xs text-slate-600 text-center max-w-3xl mx-auto">

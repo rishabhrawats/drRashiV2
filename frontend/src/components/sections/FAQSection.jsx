@@ -6,7 +6,7 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="py-20 lg:py-28">
+    <section id="faq" className="py-20 lg:py-28" data-testid="faq-section">
       <div className="max-w-4xl mx-auto px-6 lg:px-10">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -28,17 +28,18 @@ const FAQSection = () => {
             <div
               key={index}
               className={`glass-card-strong rounded-2xl overflow-hidden transition-all ${
-                openIndex === index ? 'ring-2 ring-blue-500/20' : ''
+                openIndex === index ? 'ring-2 ring-pink-500/20' : ''
               }`}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
                 className="w-full flex items-center justify-between p-6 text-left"
+                data-testid={`faq-item-${index}`}
               >
                 <div className="flex items-start gap-4">
                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors ${
                     openIndex === index
-                      ? 'bg-gradient-to-br from-blue-500 to-teal-500'
+                      ? 'bg-gradient-to-br from-pink-500 to-cyan-500'
                       : 'bg-slate-100'
                   }`}>
                     <MessageCircle size={16} className={openIndex === index ? 'text-white' : 'text-slate-500'} />
@@ -48,7 +49,7 @@ const FAQSection = () => {
                 <ChevronDown
                   size={20}
                   className={`text-slate-400 flex-shrink-0 transition-transform ${
-                    openIndex === index ? 'rotate-180 text-blue-500' : ''
+                    openIndex === index ? 'rotate-180 text-pink-500' : ''
                   }`}
                 />
               </button>
@@ -69,7 +70,7 @@ const FAQSection = () => {
           <p className="text-slate-500 mb-4">Still have questions?</p>
           <a
             href="/#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-600 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all"
           >
             <MessageCircle size={18} />
             Contact Us

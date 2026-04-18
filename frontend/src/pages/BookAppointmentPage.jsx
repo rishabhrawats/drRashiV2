@@ -45,7 +45,7 @@ const BookAppointmentPage = () => {
     const dayName = format(date, 'EEEE');
     const timing = selectedHospital.opdTimings.find(t => t.day === dayName);
     if (!timing || !timing.available) return [];
-    return timing.time.split(', ').map(t => t.split(' – ')[0]);
+    return timing.time.split(', ').map(t => t.split(' \u2013 ')[0]);
   };
 
   const handleDateSelect = (date) => {
@@ -78,12 +78,13 @@ const BookAppointmentPage = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20 pb-12 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+    <div className="min-h-screen pt-20 pb-12 bg-gradient-to-br from-pink-50 via-white to-cyan-50" data-testid="book-appointment-page">
       <div className="max-w-4xl mx-auto px-6 lg:px-10 py-8">
         {/* Back Button */}
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-slate-600 hover:text-pink-600 mb-8 transition-colors"
+          data-testid="back-to-home"
         >
           <ArrowLeft size={18} />
           Back to Home
@@ -108,7 +109,7 @@ const BookAppointmentPage = () => {
                   step > i + 1 
                     ? 'bg-green-500 text-white' 
                     : step === i + 1 
-                      ? 'bg-gradient-to-r from-blue-600 to-teal-600 text-white shadow-lg' 
+                      ? 'bg-gradient-to-r from-pink-600 to-cyan-500 text-white shadow-lg' 
                       : 'bg-slate-200 text-slate-500'
                 }`}>
                   {step > i + 1 ? <Check size={18} /> : i + 1}
@@ -143,21 +144,22 @@ const BookAppointmentPage = () => {
                     onClick={() => setSelectedHospital(hospital)}
                     className={`p-6 rounded-2xl text-left transition-all ${
                       selectedHospital.id === hospital.id
-                        ? 'bg-gradient-to-br from-blue-500 to-teal-500 text-white shadow-xl'
+                        ? 'bg-gradient-to-br from-pink-500 to-cyan-500 text-white shadow-xl'
                         : 'bg-slate-50 hover:bg-slate-100'
                     }`}
+                    data-testid={`select-hospital-${hospital.id}`}
                   >
                     <div className="flex items-start gap-4">
                       <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                        selectedHospital.id === hospital.id ? 'bg-white/20' : 'bg-blue-100'
+                        selectedHospital.id === hospital.id ? 'bg-white/20' : 'bg-pink-100'
                       }`}>
-                        <MapPin size={22} className={selectedHospital.id === hospital.id ? 'text-white' : 'text-blue-600'} />
+                        <MapPin size={22} className={selectedHospital.id === hospital.id ? 'text-white' : 'text-pink-600'} />
                       </div>
                       <div>
                         <p className={`font-semibold ${selectedHospital.id === hospital.id ? 'text-white' : 'text-slate-800'}`}>
                           {hospital.name}
                         </p>
-                        <p className={`text-sm ${selectedHospital.id === hospital.id ? 'text-blue-100' : 'text-slate-500'}`}>
+                        <p className={`text-sm ${selectedHospital.id === hospital.id ? 'text-pink-100' : 'text-slate-500'}`}>
                           {hospital.location}
                         </p>
                       </div>
@@ -208,8 +210,8 @@ const BookAppointmentPage = () => {
                         className={`
                           aspect-square flex items-center justify-center text-sm rounded-xl transition-all
                           ${isBefore(day, today) ? 'text-slate-300 cursor-not-allowed' : ''}
-                          ${available && !isSelected ? 'bg-blue-50 text-blue-600 font-medium hover:bg-blue-100' : ''}
-                          ${isSelected ? 'bg-gradient-to-br from-blue-500 to-teal-500 text-white font-semibold shadow-lg' : ''}
+                          ${available && !isSelected ? 'bg-pink-50 text-pink-600 font-medium hover:bg-pink-100' : ''}
+                          ${isSelected ? 'bg-gradient-to-br from-pink-500 to-cyan-500 text-white font-semibold shadow-lg' : ''}
                           ${!available && !isBefore(day, today) ? 'text-slate-400' : ''}
                           ${isToday(day) ? 'ring-2 ring-amber-400' : ''}
                         `}
@@ -222,7 +224,7 @@ const BookAppointmentPage = () => {
 
                 <div className="flex items-center justify-center gap-6 mt-6 text-xs">
                   <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 bg-blue-100 rounded" />
+                    <div className="w-4 h-4 bg-pink-100 rounded" />
                     <span className="text-slate-500">Available</span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -251,7 +253,7 @@ const BookAppointmentPage = () => {
                     onClick={() => handleSlotSelect(slot)}
                     className={`p-4 rounded-xl text-center font-medium transition-all ${
                       selectedSlot === slot
-                        ? 'bg-gradient-to-br from-blue-500 to-teal-500 text-white shadow-lg'
+                        ? 'bg-gradient-to-br from-pink-500 to-cyan-500 text-white shadow-lg'
                         : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
                     }`}
                   >
@@ -262,9 +264,9 @@ const BookAppointmentPage = () => {
 
               <button
                 onClick={() => setStep(1)}
-                className="text-blue-600 font-medium hover:underline block mx-auto"
+                className="text-pink-600 font-medium hover:underline block mx-auto"
               >
-                ← Change Date
+                &larr; Change Date
               </button>
             </div>
           )}
@@ -276,15 +278,15 @@ const BookAppointmentPage = () => {
                 Your Details
               </h2>
               
-              <div className="bg-blue-50 rounded-xl p-4 mb-8 text-center">
+              <div className="bg-pink-50 rounded-xl p-4 mb-8 text-center">
                 <p className="text-sm text-slate-500">Appointment</p>
                 <p className="font-semibold text-slate-800">
                   {format(selectedDate, 'EEEE, MMMM d')} at {selectedSlot}
                 </p>
-                <p className="text-sm text-blue-600">{selectedHospital.name}</p>
+                <p className="text-sm text-pink-600">{selectedHospital.name}</p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-5 max-w-md mx-auto">
+              <form onSubmit={handleSubmit} className="space-y-5 max-w-md mx-auto" data-testid="booking-form">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">Full Name *</label>
                   <input
@@ -292,8 +294,9 @@ const BookAppointmentPage = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
-                    className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none"
                     placeholder="Your full name"
+                    data-testid="booking-name-input"
                   />
                 </div>
 
@@ -304,8 +307,9 @@ const BookAppointmentPage = () => {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     required
-                    className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none"
                     placeholder="+91 00000 00000"
+                    data-testid="booking-phone-input"
                   />
                 </div>
 
@@ -315,7 +319,7 @@ const BookAppointmentPage = () => {
                     id="whatsapp-booking"
                     checked={formData.whatsapp}
                     onChange={(e) => setFormData({ ...formData, whatsapp: e.target.checked })}
-                    className="mt-1 w-4 h-4 text-blue-600 rounded"
+                    className="mt-1 w-4 h-4 text-pink-600 rounded"
                   />
                   <label htmlFor="whatsapp-booking" className="text-sm text-slate-600">
                     Get updates on WhatsApp. I agree to T&C.
@@ -324,7 +328,8 @@ const BookAppointmentPage = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all"
+                  className="w-full py-4 bg-gradient-to-r from-pink-600 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all"
+                  data-testid="booking-submit-btn"
                 >
                   Confirm Appointment
                 </button>
@@ -332,16 +337,16 @@ const BookAppointmentPage = () => {
 
               <button
                 onClick={() => setStep(2)}
-                className="text-blue-600 font-medium hover:underline block mx-auto mt-6"
+                className="text-pink-600 font-medium hover:underline block mx-auto mt-6"
               >
-                ← Change Time
+                &larr; Change Time
               </button>
             </div>
           )}
 
           {/* Step 4: Confirmation */}
           {step === 4 && (
-            <div className="text-center py-8">
+            <div className="text-center py-8" data-testid="booking-confirmation">
               <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-green-100 flex items-center justify-center">
                 <Check size={40} className="text-green-600" />
               </div>
@@ -357,14 +362,14 @@ const BookAppointmentPage = () => {
                 <p className="font-semibold text-slate-800">
                   {format(selectedDate, 'EEEE, MMMM d, yyyy')}
                 </p>
-                <p className="text-blue-600">{selectedSlot}</p>
+                <p className="text-pink-600">{selectedSlot}</p>
                 <p className="text-sm text-slate-500 mt-2">{selectedHospital.name}</p>
                 <p className="text-sm text-slate-500">{formData.name} | {formData.phone}</p>
               </div>
 
               <button
                 onClick={resetBooking}
-                className="text-blue-600 font-medium hover:underline"
+                className="text-pink-600 font-medium hover:underline"
               >
                 Book Another Appointment
               </button>
@@ -377,9 +382,10 @@ const BookAppointmentPage = () => {
           <a
             href={`tel:${doctorInfo.phone.replace(/\s/g, '')}`}
             className="glass-card-strong rounded-2xl p-5 flex items-center gap-4 hover-lift"
+            data-testid="backup-phone-1"
           >
-            <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
-              <Phone size={22} className="text-blue-600" />
+            <div className="w-12 h-12 rounded-xl bg-pink-100 flex items-center justify-center">
+              <Phone size={22} className="text-pink-600" />
             </div>
             <div>
               <p className="text-sm text-slate-500">Call to Book</p>
@@ -389,9 +395,10 @@ const BookAppointmentPage = () => {
           <a
             href={`tel:${doctorInfo.phone2.replace(/\s/g, '')}`}
             className="glass-card-strong rounded-2xl p-5 flex items-center gap-4 hover-lift"
+            data-testid="backup-phone-2"
           >
-            <div className="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center">
-              <Phone size={22} className="text-teal-600" />
+            <div className="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center">
+              <Phone size={22} className="text-cyan-600" />
             </div>
             <div>
               <p className="text-sm text-slate-500">Alternate Number</p>

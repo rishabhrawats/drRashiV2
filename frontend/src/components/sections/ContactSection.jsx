@@ -24,7 +24,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+    <section id="contact" className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white" data-testid="contact-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -49,9 +49,10 @@ const ContactSection = () => {
               <div className="space-y-4">
                 <a
                   href={`tel:${doctorInfo.phone.replace(/\s/g, '')}`}
-                  className="flex items-center gap-4 p-4 bg-blue-50 rounded-2xl hover:bg-blue-100 transition-colors"
+                  className="flex items-center gap-4 p-4 bg-pink-50 rounded-2xl hover:bg-pink-100 transition-colors"
+                  data-testid="contact-phone-1"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center">
                     <Phone size={22} className="text-white" />
                   </div>
                   <div>
@@ -62,9 +63,10 @@ const ContactSection = () => {
                 
                 <a
                   href={`tel:${doctorInfo.phone2.replace(/\s/g, '')}`}
-                  className="flex items-center gap-4 p-4 bg-blue-50 rounded-2xl hover:bg-blue-100 transition-colors"
+                  className="flex items-center gap-4 p-4 bg-pink-50 rounded-2xl hover:bg-pink-100 transition-colors"
+                  data-testid="contact-phone-2"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center">
                     <Phone size={22} className="text-white" />
                   </div>
                   <div>
@@ -77,9 +79,10 @@ const ContactSection = () => {
                   href={`https://${doctorInfo.website}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-teal-50 rounded-2xl hover:bg-teal-100 transition-colors"
+                  className="flex items-center gap-4 p-4 bg-cyan-50 rounded-2xl hover:bg-cyan-100 transition-colors"
+                  data-testid="contact-website"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center">
                     <Globe size={22} className="text-white" />
                   </div>
                   <div>
@@ -122,7 +125,7 @@ const ContactSection = () => {
             {!submitted ? (
               <>
                 <h3 className="font-display text-xl font-bold text-slate-800 mb-6">Send a Message</h3>
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-5" data-testid="contact-form">
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">Full Name *</label>
                     <input
@@ -130,8 +133,9 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
-                      className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition-all"
                       placeholder="Your name"
+                      data-testid="contact-name-input"
                     />
                   </div>
                   
@@ -142,8 +146,9 @@ const ContactSection = () => {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       required
-                      className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition-all"
                       placeholder="+91 00000 00000"
+                      data-testid="contact-phone-input"
                     />
                   </div>
                   
@@ -153,8 +158,9 @@ const ContactSection = () => {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       rows={4}
-                      className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
+                      className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition-all resize-none"
                       placeholder="Tell us about your concern..."
+                      data-testid="contact-message-input"
                     />
                   </div>
                   
@@ -164,7 +170,7 @@ const ContactSection = () => {
                       id="whatsapp"
                       checked={formData.whatsapp}
                       onChange={(e) => setFormData({ ...formData, whatsapp: e.target.checked })}
-                      className="mt-1 w-4 h-4 text-blue-600 rounded"
+                      className="mt-1 w-4 h-4 text-pink-600 rounded"
                     />
                     <label htmlFor="whatsapp" className="text-sm text-slate-600">
                       I agree to receive updates via WhatsApp and accept the Terms & Conditions.
@@ -173,7 +179,8 @@ const ContactSection = () => {
                   
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all"
+                    className="w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-pink-600 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-pink-500/25 transition-all"
+                    data-testid="contact-submit-btn"
                   >
                     <Send size={18} />
                     Send Message
@@ -181,7 +188,7 @@ const ContactSection = () => {
                 </form>
               </>
             ) : (
-              <div className="text-center py-12">
+              <div className="text-center py-12" data-testid="contact-success">
                 <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-green-100 flex items-center justify-center">
                   <CheckCircle size={40} className="text-green-600" />
                 </div>
@@ -192,7 +199,7 @@ const ContactSection = () => {
                     setSubmitted(false);
                     setFormData({ name: '', phone: '', message: '', whatsapp: true });
                   }}
-                  className="text-blue-600 font-medium hover:underline"
+                  className="text-pink-600 font-medium hover:underline"
                 >
                   Send another message
                 </button>
@@ -216,7 +223,8 @@ const ContactSection = () => {
             <p className="text-slate-600 mb-6">Schedule your consultation in under 30 seconds.</p>
             <Link
               to="/book-appointment"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-semibold text-lg rounded-2xl shadow-xl shadow-blue-500/25 hover:shadow-2xl hover:shadow-blue-500/30 transition-all"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-pink-600 to-cyan-500 text-white font-semibold text-lg rounded-2xl shadow-xl shadow-pink-500/25 hover:shadow-2xl hover:shadow-pink-500/30 transition-all"
+              data-testid="contact-book-btn"
             >
               <Calendar size={22} />
               Book Appointment Now

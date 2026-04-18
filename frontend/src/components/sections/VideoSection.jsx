@@ -4,7 +4,7 @@ import { Play, Youtube, Instagram, Facebook, ExternalLink } from 'lucide-react';
 
 const VideoSection = () => {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-20 lg:py-28" data-testid="video-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -29,6 +29,7 @@ const VideoSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block relative aspect-video bg-gradient-to-br from-slate-800 to-slate-900 group overflow-hidden"
+                data-testid="youtube-video-link"
               >
                 {/* Cover Image */}
                 <img
@@ -69,7 +70,7 @@ const VideoSection = () => {
                     </div>
                     <div>
                       <p className="text-white font-semibold text-sm">Dr. Rashi Agrawal</p>
-                      <p className="text-white/60 text-xs">Cancer Specialist • Radiation Oncologist</p>
+                      <p className="text-white/60 text-xs">Cancer Specialist &bull; Radiation Oncologist</p>
                     </div>
                   </div>
                 </div>
@@ -94,6 +95,7 @@ const VideoSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="glass-card-strong rounded-2xl p-6 flex items-center gap-4 hover-lift group"
+              data-testid="social-youtube"
             >
               <div className="w-14 h-14 rounded-xl bg-red-600 flex items-center justify-center flex-shrink-0">
                 <Youtube size={28} className="text-white" />
@@ -111,6 +113,7 @@ const VideoSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="glass-card-strong rounded-2xl p-6 flex items-center gap-4 hover-lift group"
+              data-testid="social-instagram"
             >
               <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 flex items-center justify-center flex-shrink-0">
                 <Instagram size={28} className="text-white" />
@@ -128,6 +131,7 @@ const VideoSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="glass-card-strong rounded-2xl p-6 flex items-center gap-4 hover-lift group"
+              data-testid="social-facebook"
             >
               <div className="w-14 h-14 rounded-xl bg-blue-700 flex items-center justify-center flex-shrink-0">
                 <Facebook size={28} className="text-white" />
@@ -145,8 +149,9 @@ const VideoSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="glass-card-strong rounded-2xl p-6 flex items-center gap-4 hover-lift group"
+              data-testid="social-google-reviews"
             >
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-600 to-green-500 flex items-center justify-center flex-shrink-0">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-600 to-green-500 flex items-center justify-center flex-shrink-0">
                 <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="currentColor">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                   <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -158,7 +163,7 @@ const VideoSection = () => {
                 <p className="font-semibold text-slate-800">Google Reviews</p>
                 <p className="text-sm text-slate-500">See patient feedback</p>
               </div>
-              <ExternalLink size={18} className="text-slate-400 group-hover:text-blue-600 transition-colors" />
+              <ExternalLink size={18} className="text-slate-400 group-hover:text-cyan-600 transition-colors" />
             </a>
           </div>
         </div>

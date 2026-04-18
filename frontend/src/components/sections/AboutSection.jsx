@@ -4,11 +4,11 @@ import { Award, GraduationCap, MapPin, CheckCircle } from 'lucide-react';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 lg:py-28">
+    <section id="about" className="py-20 lg:py-28" data-testid="about-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 text-sm font-semibold rounded-full mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-pink-50 text-pink-600 text-sm font-semibold rounded-full mb-4">
             <GraduationCap size={16} />
             About Dr. Agrawal
           </span>
@@ -25,7 +25,7 @@ const AboutSection = () => {
           {/* Credentials Timeline */}
           <div className="glass-card rounded-3xl p-8">
             <h3 className="font-display text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-              <GraduationCap className="text-blue-600" />
+              <GraduationCap className="text-cyan-600" />
               Training & Fellowships
             </h3>
             <div className="space-y-4">
@@ -37,7 +37,7 @@ const AboutSection = () => {
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
                     cred.type === 'fellowship' 
                       ? 'bg-gradient-to-br from-amber-400 to-orange-500' 
-                      : 'bg-gradient-to-br from-blue-400 to-blue-600'
+                      : 'bg-gradient-to-br from-cyan-400 to-cyan-600'
                   }`}>
                     {cred.type === 'fellowship' ? (
                       <Award size={20} className="text-white" />
@@ -51,7 +51,7 @@ const AboutSection = () => {
                       <MapPin size={14} />
                       <span>{cred.location}</span>
                       {cred.year && (
-                        <span className="ml-2 px-2 py-0.5 bg-blue-100 text-blue-600 text-xs rounded-full">
+                        <span className="ml-2 px-2 py-0.5 bg-pink-100 text-pink-600 text-xs rounded-full">
                           {cred.year}
                         </span>
                       )}
@@ -78,7 +78,7 @@ const AboutSection = () => {
                     </div>
                     <div>
                       <p className="font-medium text-slate-800">{award.title}</p>
-                      <p className="text-sm text-slate-500">{award.org} {award.year && `• ${award.year}`}</p>
+                      <p className="text-sm text-slate-500">{award.org} {award.year && `\u2022 ${award.year}`}</p>
                     </div>
                   </div>
                 ))}
@@ -86,7 +86,7 @@ const AboutSection = () => {
             </div>
 
             {/* Approach Card */}
-            <div className="bg-gradient-to-br from-blue-600 to-teal-600 rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-br from-pink-600 to-cyan-500 rounded-3xl p-8 text-white">
               <h3 className="font-display text-xl font-bold mb-4">Treatment Approach</h3>
               <ul className="space-y-3">
                 {[
@@ -96,8 +96,8 @@ const AboutSection = () => {
                   "Comprehensive follow-up and support"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle size={20} className="text-teal-300 flex-shrink-0 mt-0.5" />
-                    <span className="text-blue-50">{item}</span>
+                    <CheckCircle size={20} className="text-cyan-200 flex-shrink-0 mt-0.5" />
+                    <span className="text-pink-50">{item}</span>
                   </li>
                 ))}
               </ul>

@@ -12,6 +12,7 @@ export const doctorInfo = {
   phone2: "+91 98914 83550",
   whatsapp: "919891483550",
   website: "drrashiagrawal.com",
+  logo: "https://customer-assets.emergentagent.com/job_f10da3da-2149-401e-a3d2-6ee479fae093/artifacts/vk14qzll_Dr%20Rashi%20AGRAWAL.png",
   profileImage: "https://customer-assets.emergentagent.com/job_6fa1bc13-2ded-4091-8436-9d3e22eac5d8/artifacts/vnl434rb_medium_dr_rashi_agrawal_3ddd0e8452.jpg",
   instagram: "https://www.instagram.com/drrashiagrawalcancerspecialist?igsh=MWIxaDF3MHhseHcyZg==",
   youtube: "https://youtube.com/@drrashiagrawalcancerspecialist?feature=shared",

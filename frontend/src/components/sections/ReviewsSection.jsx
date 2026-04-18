@@ -4,11 +4,11 @@ import { Star, ExternalLink, Quote } from 'lucide-react';
 
 const ReviewsSection = () => {
   return (
-    <section id="reviews" className="py-20 lg:py-28">
+    <section id="reviews" className="py-20 lg:py-28" data-testid="reviews-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 text-sm font-semibold rounded-full mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-pink-50 text-pink-600 text-sm font-semibold rounded-full mb-4">
             <Star size={16} />
             Google Reviews
           </span>
@@ -24,7 +24,7 @@ const ReviewsSection = () => {
         <div className="glass-card-strong rounded-3xl p-8 mb-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-green-500 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-600 to-green-500 flex items-center justify-center">
                 <svg viewBox="0 0 24 24" className="w-8 h-8 text-white" fill="currentColor">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                   <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -48,7 +48,8 @@ const ReviewsSection = () => {
               href={doctorInfo.googleReviews}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all"
+              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-600 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all"
+              data-testid="view-all-reviews-btn"
             >
               <span>View All Reviews</span>
               <ExternalLink size={18} />
@@ -64,7 +65,7 @@ const ReviewsSection = () => {
               className="glass-card rounded-2xl p-6 hover-lift"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center text-white font-semibold">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-cyan-500 flex items-center justify-center text-white font-semibold">
                   {review.name.charAt(0)}
                 </div>
                 <div>

@@ -8,7 +8,7 @@ const iconMap = {
 
 const TreatmentsSection = () => {
   return (
-    <section id="treatments" className="py-20 lg:py-28">
+    <section id="treatments" className="py-20 lg:py-28" data-testid="treatments-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -32,9 +32,9 @@ const TreatmentsSection = () => {
             return (
               <div
                 key={technique.id}
-                className="group glass-card rounded-2xl p-6 text-center hover-lift cursor-pointer hover:bg-gradient-to-br hover:from-blue-50 hover:to-teal-50 transition-all"
+                className="group glass-card rounded-2xl p-6 text-center hover-lift cursor-pointer hover:bg-gradient-to-br hover:from-pink-50 hover:to-cyan-50 transition-all"
               >
-                <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 group-hover:from-blue-500 group-hover:to-teal-500 flex items-center justify-center transition-all">
+                <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 group-hover:from-pink-500 group-hover:to-cyan-500 flex items-center justify-center transition-all">
                   <IconComponent size={24} className="text-slate-600 group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="font-bold text-slate-800 mb-1">{technique.name}</h3>
@@ -45,10 +45,10 @@ const TreatmentsSection = () => {
         </div>
 
         {/* Info Banner */}
-        <div className="mt-12 glass-card rounded-3xl p-8 bg-gradient-to-r from-blue-50 to-teal-50">
+        <div className="mt-12 glass-card rounded-3xl p-8 bg-gradient-to-r from-pink-50 to-cyan-50">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500 to-cyan-500 flex items-center justify-center">
                 <Zap size={28} className="text-white" />
               </div>
               <div>
@@ -58,7 +58,7 @@ const TreatmentsSection = () => {
             </div>
             <a
               href="/#contact"
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all"
+              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-600 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all"
             >
               <span>Consult Now</span>
               <ArrowRight size={18} />

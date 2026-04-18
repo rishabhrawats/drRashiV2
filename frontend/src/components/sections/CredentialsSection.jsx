@@ -4,7 +4,7 @@ import { Award, GraduationCap, MapPin, Globe } from 'lucide-react';
 
 const CredentialsSection = () => {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-blue-50">
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-pink-50" data-testid="credentials-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -23,7 +23,7 @@ const CredentialsSection = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 to-teal-400 hidden lg:block" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-pink-400 to-cyan-400 hidden lg:block" />
 
           <div className="space-y-8">
             {credentials.map((cred, index) => (
@@ -40,7 +40,7 @@ const CredentialsSection = () => {
                       <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
                         cred.type === 'fellowship'
                           ? 'bg-gradient-to-br from-amber-400 to-orange-500'
-                          : 'bg-gradient-to-br from-blue-400 to-teal-500'
+                          : 'bg-gradient-to-br from-cyan-400 to-cyan-600'
                       }`}>
                         {cred.type === 'fellowship' ? (
                           <Award size={22} className="text-white" />
@@ -55,7 +55,7 @@ const CredentialsSection = () => {
                           <span>{cred.location}</span>
                         </div>
                         {cred.year && (
-                          <span className="inline-flex mt-2 px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full">
+                          <span className="inline-flex mt-2 px-2 py-1 bg-pink-100 text-pink-700 text-xs font-medium rounded-full">
                             {cred.year}
                           </span>
                         )}
@@ -65,7 +65,7 @@ const CredentialsSection = () => {
                 </div>
 
                 {/* Center Dot */}
-                <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full ring-4 ring-white shadow-lg" />
+                <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-pink-500 to-cyan-500 rounded-full ring-4 ring-white shadow-lg" />
 
                 {/* Empty space */}
                 <div className="hidden lg:block w-1/2" />

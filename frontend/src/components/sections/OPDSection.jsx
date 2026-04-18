@@ -7,7 +7,7 @@ const OPDSection = () => {
   const [activeHospital, setActiveHospital] = useState(hospitals[0]);
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white" data-testid="opd-section">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -19,7 +19,7 @@ const OPDSection = () => {
             Hospital Locations & Timings
           </h2>
           <p className="text-lg text-slate-600">
-            Visit us at Max Healthcare facilities for consultations and treatments.
+            Visit us for consultations and treatments.
           </p>
         </div>
 
@@ -32,9 +32,10 @@ const OPDSection = () => {
                 onClick={() => setActiveHospital(hospital)}
                 className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all ${
                   activeHospital.id === hospital.id
-                    ? 'bg-gradient-to-r from-blue-600 to-teal-600 text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-pink-600 to-cyan-500 text-white shadow-lg'
                     : 'text-slate-600 hover:bg-slate-100'
                 }`}
+                data-testid={`hospital-toggle-${hospital.id}`}
               >
                 <span className="block">{hospital.name}</span>
                 <span className="block text-xs opacity-80">{hospital.location}</span>
@@ -48,11 +49,11 @@ const OPDSection = () => {
           {/* Info Card */}
           <div className="glass-card-strong rounded-3xl p-8">
             <div className="flex items-start gap-4 mb-6">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center flex-shrink-0">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
                 <MapPin size={24} className="text-white" />
               </div>
               <div>
-                <span className="inline-flex px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full mb-2">
+                <span className="inline-flex px-2 py-1 bg-pink-100 text-pink-700 text-xs font-medium rounded-full mb-2">
                   {activeHospital.type}
                 </span>
                 <h3 className="font-display text-2xl font-bold text-slate-800">
@@ -67,7 +68,7 @@ const OPDSection = () => {
             <div className="flex flex-wrap gap-3">
               <a
                 href={`tel:${doctorInfo.phone.replace(/\s/g, '')}`}
-                className="flex items-center gap-2 px-5 py-2.5 bg-blue-50 text-blue-600 font-medium rounded-xl hover:bg-blue-100 transition-colors"
+                className="flex items-center gap-2 px-5 py-2.5 bg-pink-50 text-pink-600 font-medium rounded-xl hover:bg-pink-100 transition-colors"
               >
                 <Phone size={18} />
                 {doctorInfo.phone}
@@ -127,7 +128,7 @@ const OPDSection = () => {
                 <p className="text-slate-500 mb-4">Please call for appointment timings at this location.</p>
                 <a
                   href={`tel:${doctorInfo.phone.replace(/\s/g, '')}`}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-semibold rounded-xl"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-600 to-cyan-500 text-white font-semibold rounded-xl"
                 >
                   <Phone size={18} />
                   Call Now
@@ -141,7 +142,8 @@ const OPDSection = () => {
         <div className="mt-12 text-center">
           <Link
             to="/book-appointment"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-semibold text-lg rounded-2xl shadow-xl shadow-blue-500/25 hover:shadow-2xl hover:shadow-blue-500/30 transition-all"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-pink-600 to-cyan-500 text-white font-semibold text-lg rounded-2xl shadow-xl shadow-pink-500/25 hover:shadow-2xl hover:shadow-pink-500/30 transition-all"
+            data-testid="opd-book-btn"
           >
             <Calendar size={22} />
             Book Your Appointment Now
