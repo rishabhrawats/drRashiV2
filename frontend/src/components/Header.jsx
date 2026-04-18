@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { navigationLinks, doctorInfo } from '../data/mock';
-import { Menu, X, Phone, Calendar, ChevronDown } from 'lucide-react';
+import { Menu, X, Phone, Calendar } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,20 +32,20 @@ const Header = () => {
   return (
     <header
       data-testid="main-header"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'glass-card-strong py-2'
-          : 'bg-white/70 backdrop-blur-sm py-4'
+          ? 'bg-white/95 backdrop-blur-md shadow-sm py-2'
+          : 'bg-white/80 backdrop-blur-sm py-3'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2" data-testid="header-logo">
+          <Link to="/" className="flex-shrink-0" data-testid="header-logo">
             <img
               src={doctorInfo.logo}
               alt="Dr. Rashi Agrawal"
-              className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
+              className="h-12 sm:h-14 lg:h-16 w-auto object-contain"
               style={{ mixBlendMode: 'multiply' }}
             />
           </Link>
@@ -62,7 +62,7 @@ const Header = () => {
                     scrollToSection(link.href);
                   }
                 }}
-                className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-pink-600 hover:bg-pink-50 rounded-lg transition-all"
+                className="px-3 py-2 text-sm font-medium text-slate-600 hover:text-pink-600 rounded-lg transition-colors"
               >
                 {link.label}
               </a>
@@ -73,18 +73,18 @@ const Header = () => {
           <div className="flex items-center gap-2">
             <a
               href={`tel:${doctorInfo.phone.replace(/\s/g, '')}`}
-              className="hidden md:flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-pink-600 hover:bg-pink-50 rounded-xl transition-all"
+              className="hidden md:flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 hover:text-pink-600 rounded-lg transition-colors"
               data-testid="header-call-btn"
             >
-              <Phone size={18} />
+              <Phone size={16} />
               <span className="hidden lg:inline">Call Now</span>
             </a>
             <Link
               to="/book-appointment"
-              className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-pink-600 to-pink-700 text-white text-sm font-semibold rounded-xl hover:shadow-lg hover:shadow-pink-500/25 transition-all"
+              className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-pink-600 to-pink-700 text-white text-sm font-semibold rounded-xl hover:shadow-lg hover:shadow-pink-500/25 transition-all"
               data-testid="header-book-btn"
             >
-              <Calendar size={18} />
+              <Calendar size={16} />
               <span>Book Appointment</span>
             </Link>
 
@@ -95,14 +95,14 @@ const Header = () => {
               aria-label="Toggle menu"
               data-testid="mobile-menu-toggle"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 glass-card-strong border-t border-slate-200/50 shadow-xl">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-100 shadow-xl">
             <nav className="flex flex-col p-4">
               {navigationLinks.map((link) => (
                 <a
@@ -120,12 +120,12 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <div className="mt-4 pt-4 border-t border-slate-200 space-y-2">
+              <div className="mt-3 pt-3 border-t border-slate-100">
                 <a
                   href={`tel:${doctorInfo.phone.replace(/\s/g, '')}`}
                   className="flex items-center justify-center gap-2 w-full py-3 text-pink-600 font-medium border border-pink-200 rounded-xl hover:bg-pink-50"
                 >
-                  <Phone size={18} />
+                  <Phone size={16} />
                   {doctorInfo.phone}
                 </a>
               </div>

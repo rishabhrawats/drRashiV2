@@ -12,6 +12,7 @@ const WhatsAppButton = () => {
       rel="noopener noreferrer"
       className="whatsapp-float group"
       aria-label="Chat on WhatsApp"
+      data-testid="whatsapp-button"
     >
       <div className="relative">
         {/* Pulse ring */}
