@@ -14,13 +14,11 @@ const Footer = () => {
           {/* Column 1 - About */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <div className="bg-white rounded-xl p-2 inline-block">
-                <img
-                  src={doctorInfo.logo}
-                  alt="Dr. Rashi Agrawal"
-                  className="h-10 w-auto object-contain"
-                />
-              </div>
+              <img
+                src={doctorInfo.logo}
+                alt="Dr. Rashi Agrawal"
+                className="h-14 w-auto object-contain brightness-0 invert opacity-90"
+              />
             </div>
             <p className="text-sm text-slate-400 leading-relaxed mb-6">
               {doctorInfo.experience} years of excellence in radiation oncology, combining advanced technology with compassionate care.

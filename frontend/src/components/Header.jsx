@@ -35,7 +35,7 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
           ? 'glass-card-strong py-2'
-          : 'bg-transparent py-4'
+          : 'bg-white/70 backdrop-blur-sm py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
@@ -45,7 +45,8 @@ const Header = () => {
             <img
               src={doctorInfo.logo}
               alt="Dr. Rashi Agrawal"
-              className="h-10 sm:h-12 w-auto object-contain"
+              className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
+              style={{ mixBlendMode: 'multiply' }}
             />
           </Link>
 
